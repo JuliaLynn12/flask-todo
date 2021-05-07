@@ -14,7 +14,7 @@ class Todo(db.Model):
 @app.route('/')
 def index():
     todo_list = Todo.query.all()
-    return render_template('base.html')
+    return render_template("base.html", todo_list=todo_list) 
 
 if __name__ == "__main__":
     db.create_all()
